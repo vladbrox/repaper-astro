@@ -1,17 +1,101 @@
 ---
 import Layout from "@/layouts/main.astro"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import {
+  Card,
+  CardHeader,
+  CardDescription,
+  CardTitle,
+} from "@/components/ui/card"
+import { AccordionComponent } from "@/components/Accordion.jsx"
+import TelegramIcon from "@/components/icons/TelegramIcon.astro";
 ---
 
 <Layout>
-  <div class="flex min-h-svh p-6">
-    <div class="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-      <div>
-        <h1 class="font-medium">Project ready!</h1>
-        <p>You may now add components and start building.</p>
-        <p>We've already added the button component for you.</p>
-        <Button client:load className="mt-2">Button</Button>
+  <div class="flex flex-col items-center w-full max-w-4xl mx-auto px-4 pt-32 pb-16 text-center">
+
+    <div class="flex flex-col items-center w-full max-w-xl">
+
+      <div class="-mb-3 -rotate-4 z-10 select-none">
+        <Badge className="bg-amber-400 hover:bg-amber-400 text-black border-amber-500/20 px-3 py-1 text-base font-bold tracking-wider shadow-sm">
+            repaper in early alpha
+        </Badge>
+      </div>
+
+      <h1 class="flex flex-col w-full text-6xl sm:text-7xl font-black tracking-tight leading-[0.95]">
+        <span class="text-foreground">
+          take back
+        </span>
+        <span class="font-extralight italic mt-1">
+          your attention.
+        </span>
+      </h1>
+
+      <p class="mt-12 text-lg sm:text-xl leading-snug max-w-lg font-medium text-muted-foreground">
+        Stop endless scrolling. Get a noise-free AI summary of your entire information ecosystem in one click.
+      </p>
+
+      <a href="https://t.me/repaperbot" target="_blank" class="mt-10">
+        <Button size="lg" className="h-14 px-8 text-lg font-bold rounded-full inline-flex items-center gap-3 shadow-md">
+          <TelegramIcon class="size-6 shrink-0 fill-current" />
+          <span>Launch Bot</span>
+        </Button>
+      </a>
+    </div>
+
+    <div class="w-full mt-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full text-left">
+        <Card className="w-full">
+          <CardHeader>
+            <CardTitle className="text-lg sm:text-xl font-bold text-foreground">
+              4 summary presets
+            </CardTitle>
+            <CardDescription className="text-sm sm:text-base text-muted-foreground mt-1.5">
+              Switch between brief, digest, detailed, and narrative formats depending on how deep you want to read.
+            </CardDescription>
+          </CardHeader>
+        </Card>
+
+        <Card className="w-full">
+          <CardHeader>
+            <CardTitle className="text-lg sm:text-xl font-bold text-foreground">
+              Custom prompts & interests
+            </CardTitle>
+            <CardDescription className="text-sm sm:text-base text-muted-foreground mt-1.5">
+              Give the AI your own instructions and topic interests to highlight what matters and cut out the noise.
+            </CardDescription>
+          </CardHeader>
+        </Card>
+
+        <Card className="w-full">
+          <CardHeader>
+            <CardTitle className="text-lg sm:text-xl font-bold text-foreground">
+              4 output languages
+            </CardTitle>
+            <CardDescription className="text-sm sm:text-base text-muted-foreground mt-1.5">
+              Read summaries cleanly in English, Russian, Belarusian, or Polish without awkward translations.
+            </CardDescription>
+          </CardHeader>
+        </Card>
+
+        <Card className="w-full">
+          <CardHeader>
+            <CardTitle className="text-lg sm:text-xl font-bold text-foreground">
+              Scheduled digests
+            </CardTitle>
+            <CardDescription className="text-sm sm:text-base text-muted-foreground mt-1.5">
+              Have your summaries delivered automatically on a timer right inside Telegram so you never have to ask.
+            </CardDescription>
+          </CardHeader>
+        </Card>
       </div>
     </div>
+
+    <div class="w-full max-w-xl mt-12 text-left">
+        <h1 class="text-4xl text-center">Frequently Asked Questions</h1>
+        <AccordionComponent client:visible />
+    </div>
+
   </div>
 </Layout>

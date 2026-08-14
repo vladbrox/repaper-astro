@@ -1,0 +1,20 @@
+---
+import { Button } from "@/components/ui/button"
+import TelegramIcon from "@/components/icons/TelegramIcon.astro"
+---
+
+<header class="fixed top-4 left-1/2 -translate-x-1/2 z-50
+  flex items-center justify-between w-[calc(100%-2rem)] max-w-xl px-6 py-3
+  bg-card/80 backdrop-blur-md border border-border rounded-full shadow-sm">
+
+  <span class="font-extrabold text-xl tracking-tighter text-foreground"><a href="/">
+    repaper
+  </a></span>
+
+  <a href="https://t.me/repaperbot" target="_blank" class="inline-flex">
+    <Button size="default">
+      <TelegramIcon class="size-5 shrink-0 fill-current" />
+      <span class="font-semibold">Launch Bot</span>
+    </Button>
+  </a>
+</header>

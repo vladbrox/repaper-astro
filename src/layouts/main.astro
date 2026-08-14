@@ -1,5 +1,6 @@
 ---
 import "@/styles/global.css"
+import Header from "@/components/Header.astro"
 ---
 
 <html lang="en">
@@ -7,9 +8,28 @@ import "@/styles/global.css"
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Astro App</title>
+    <title>repaper</title>
   </head>
+  <Header></Header>
   <body>
     <slot />
   </body>
+  <footer class="w-full mt-16 py-8 border-t border-border/40 font-[550]">
+    <div class="max-w-xl mx-auto px-6 flex items-center justify-center gap-3 text-sl">
+      <span>© 2026 repaper</span>
+
+      <span class="opacity-40">•</span>
+
+      <span class="hidden sm:inline">take back your attention</span>
+
+      <span class="hidden sm:inline opacity-40">•</span>
+
+      <a href="/roadmap" class="hover:text-foreground transition-colors underline underline-offset-4">
+        roadmap
+      </a>
+
+    </div>
+
+  </footer>
+
 </html>
