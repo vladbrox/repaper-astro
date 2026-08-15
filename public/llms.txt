@@ -1,0 +1,15 @@
+# repaper
+
+> repaper is a Telegram bot that turns your entire information feed into a clean, noise-free AI summary — take back your attention from endless scrolling.
+
+## Features
+
+- 4 summary presets: brief, digest, detailed, and narrative formats
+- Custom prompts & interests: tailor the AI to highlight what matters to you
+- 4 output languages: English, Russian, Belarusian, and Polish
+- Scheduled digests: automatic summaries delivered on a timer inside Telegram
+
+## Links
+
+- [Launch Bot](https://t.me/repaperbot): Try repaper directly in Telegram
+- [Roadmap](https://repaper.jkoder.cc/roadmap): What's coming next for repaper
