@@ -1,6 +1,19 @@
 ---
 import "@/styles/global.css"
 import Header from "@/components/Header.astro"
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = "repaper — take back your attention",
+  description = "Stop endless scrolling. repaper turns your entire information feed into a clean AI summary — right inside Telegram.",
+} = Astro.props
+
+const siteUrl = "https://repaper.jkoder.cc"
+const ogImage = `${siteUrl}/og-image.png`
 ---
 
 <html lang="en">
@@ -9,28 +22,36 @@ import Header from "@/components/Header.astro"
     <meta name="viewport" content="width=device-width" />
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>repaper</title>
+    <link rel="canonical" href={new URL(Astro.url.pathname, siteUrl)} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, siteUrl)} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
   </head>
-  <Header></Header>
   <body>
+    <Header></Header>
     <slot />
+
+    <footer class="w-full mt-16 py-8 border-t border-border/40 font-[550]">
+      <div class="max-w-xl mx-auto px-6 flex items-center justify-center gap-3 text-sl">
+        <span>© 2026 repaper</span>
+        <span class="opacity-40">•</span>
+        <span class="hidden sm:inline">take back your attention</span>
+        <span class="hidden sm:inline opacity-40">•</span>
+        <a href="/roadmap" class="hover:text-foreground transition-colors underline underline-offset-4">
+          roadmap
+        </a>
+      </div>
+    </footer>
   </body>
-  <footer class="w-full mt-16 py-8 border-t border-border/40 font-[550]">
-    <div class="max-w-xl mx-auto px-6 flex items-center justify-center gap-3 text-sl">
-      <span>© 2026 repaper</span>
-
-      <span class="opacity-40">•</span>
-
-      <span class="hidden sm:inline">take back your attention</span>
-
-      <span class="hidden sm:inline opacity-40">•</span>
-
-      <a href="/roadmap" class="hover:text-foreground transition-colors underline underline-offset-4">
-        roadmap
-      </a>
-
-    </div>
-
-  </footer>
-
 </html>

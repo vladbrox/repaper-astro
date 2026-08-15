@@ -10,5 +10,8 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [react()],
-  prefetch: true
+  prefetch: true,
+  build: {
+      inlineStylesheets: "always",
+    },
 })
