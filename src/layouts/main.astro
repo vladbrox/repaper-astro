@@ -12,7 +12,7 @@ const {
   description = "Stop endless scrolling. repaper turns your entire information feed into a clean AI summary — right inside Telegram.",
 } = Astro.props
 
-const siteUrl = "https://repaper.jkoder.cc"
+const siteUrl = "https://repaper.is-a.bot"
 const ogImage = `${siteUrl}/og-image.png`
 ---
 
@@ -44,14 +44,18 @@ const ogImage = `${siteUrl}/og-image.png`
     <main><slot /></main>
 
     <footer class="w-full mt-16 py-8 border-t border-border/40 font-[550]">
-      <div class="max-w-xl mx-auto px-6 flex items-center justify-center gap-3 text-sl">
+      <div class="max-w-xl mx-auto px-6 flex flex-col items-center justify-center gap-3 text-sl">
+        <span class="text-foreground">take back your attention</span>
+        <span class="flex-col-reverse">
+            <a href="/roadmap" class="underline underline-offset-4">
+              roadmap
+            </a>
+            <span class="opacity-40">•</span>
+            <a href="/privacy" class="underline underline-offset-4">
+                privacy
+            </a>
+        </span>
         <span>© 2026 repaper</span>
-        <span class="opacity-40">•</span>
-        <span class="hidden sm:inline">take back your attention</span>
-        <span class="hidden sm:inline opacity-40">•</span>
-        <a href="/roadmap" class="hover:text-foreground transition-colors underline underline-offset-4">
-          roadmap
-        </a>
       </div>
     </footer>
   </body>

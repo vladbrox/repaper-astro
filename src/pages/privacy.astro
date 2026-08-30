@@ -1,0 +1,47 @@
+---
+import Layout from "@/layouts/main.astro"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+---
+
+<Layout title="repaper: privacy" description="How repaper keeps you data.">
+  <div class="max-w-xl mx-auto px-4 pt-32 pb-20 text-left">
+
+    <h1 class="text-5xl font-black tracking-tight text-center">Privacy & data handling</h1>
+    <div class="mt-12 flex flex-col gap-3">
+        <p class="text-2xl text-foreground font-medium">
+            1. channel access
+        </p>
+
+        <p class="text-xl text-foreground">
+            <b>repaper</b> only accesses posts from the specific public telegram channels you add. it cannot and does not read your private messages, contacts, group chats, or personal account data
+        </p>
+
+        <p class="text-2xl text-foreground font-medium">
+            2. what is stored
+        </p>
+
+        <p class="text-xl text-foreground">
+            we store only your telegram user id, preferred settings (digest time, language, custom prompt), and the list of channels you added. data is kept in a private self-hosted postgresql database
+        </p>
+
+        <p class="text-2xl text-foreground font-medium">
+            3. ai processing
+        </p>
+
+        <p class="text-xl text-foreground">
+            <b>summarization</b>: processed via mistral ai (mistral-medium-latest)<br/>
+            <b>prompt safety</b>: verified via groq (openai/gpt-oss-safeguard-20b)<br/><br/>
+            data sent to these providers is handled under their standard api terms for processing requests only
+        </p>
+
+        <p class="text-2xl text-foreground font-medium">
+            4. data retention & deletion
+        </p>
+
+        <p class="text-xl text-foreground">
+            raw channel posts are processed in real time and are not permanently archived. if you want to completely delete your account and all associated data, contact <a href=https://t.me/getrepaper?direct class="underline underline-offset-4 font-bold">us</a>
+        </p>
+
+  </div>
+</Layout>

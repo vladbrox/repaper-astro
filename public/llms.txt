@@ -12,4 +12,4 @@
 ## Links
 
 - [Launch Bot](https://t.me/repaperbot): Try repaper directly in Telegram
-- [Roadmap](https://repaper.jkoder.cc/roadmap): What's coming next for repaper
+- [Roadmap](https://repaper.is-a.bot/roadmap): What's coming next for repaper
